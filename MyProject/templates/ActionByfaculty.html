@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="col-sm-8">
+        <h3 class="text-center alert alert-info">Faculty Dashboard</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table class="table table-striped">
+                <tr>
+                    <td ><b>Student Name: </b></td>
+                    <td>{{id.student_username}}</td>
+                </tr>
+                <tr>
+                    <td><b>Student Email: </b></td>
+                    <td>{{id.student_email}}</td>
+                </tr>
+                <tr>
+                    <td><b>Standard: </b></td>
+                    <td>{{id.Std}}</td>
+                </tr>
+                <tr>
+                    <td><b>Roll Number: </b></td>
+                    <td>{{id.Roll_number}}</td>
+                </tr>
+                <tr>
+                    <td><b>School Name: </b></td>
+                    <td>{{id.School_name}}</td>
+                </tr>
+                <tr>
+                    <td><b>Address: </b></td>
+                    <td>{{id.Address}}</td>
+                </tr>
+                <tr>
+                    <td><b>Form Number: </b></td>
+                    <td>{{id.student_username}}</td>
+                </tr>
+                <tr>
+                    <td><b>Action: </b></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example" name="action">
+                            <option selected>Open this select menu</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Accepted">Accept</option>
+                            <option value="Rejected">Reject</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
