@@ -8,6 +8,8 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
+# STUDENT-REGISTRATION
+
 # HOME PAGE
 def home_page(request):
     return render(request,'home.html')
