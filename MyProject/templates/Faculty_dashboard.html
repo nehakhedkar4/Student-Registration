@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="col-sm-12">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <h3 class="text-center alert alert-info">Faculty Dashboard</h3>
+            {% if data %}
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Student Email</th>
+                    <th scope="col">Standard</th>
+                    <th scope="col">Roll Number</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Form Number</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for d in data %}
+                        <tr>
+                            <td>{{d.id}}</td>
+                            <td>{{d.student_username}}</td>
+                            <td>{{d.student_email}}</td>
+                            <td>{{d.Std}}</td>
+                            <td>{{d.Roll_number}}</td>
+                            <td>{{d.School_name}}</td>
+                            <td>{{d.Address}}</td>
+                            <td>{{d.Application_num}}</td>
+                            <td>{{d.status}}</td>
+                            <td>
+                                <a href="{% url 'update_status' d.id %}" class="btn btn-warning">Update</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+              {% endif %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+</html> 
+
+
+
+
