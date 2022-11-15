@@ -10,10 +10,6 @@ urlpatterns = [
     path('f_dashboard/',views.f_dashboard,name='f_dashboard'),
     path('update/<int:id>/',views.action_data,name='update_status'),
 
-
-
-    path('render_page',views.ren),
-    path('redirect_page',views.red),
 ]
 
 

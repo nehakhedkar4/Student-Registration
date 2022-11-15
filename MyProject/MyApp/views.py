@@ -172,13 +172,3 @@ def action_data(request,id):
 
 
 
-    # rough
-
-def ren(request):
-    if request.method == "POST":
-        print("============")
-        return render(request,'rdct.html')
-    return render(request,'rend.html')
-
-def red(request):
-    return redirect('rdct.html')
